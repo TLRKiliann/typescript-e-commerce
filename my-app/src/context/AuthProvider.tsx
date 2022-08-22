@@ -7,6 +7,8 @@ type Props = {
 }
 
 type AuthContextProps = {
+    auth: object;
+    setAuth: React.Dispatch<React.SetStateAction<object>>;
     usrEmail: string;
     setUsrEmail: React.Dispatch<React.SetStateAction<string>>;
     email: string;
@@ -25,6 +27,7 @@ export function useAuthLogin() {
 
 export function AuthProvider({ children }: Props) {
 
+    const [auth, setAuth] = useState<object>({});
     const [switchLogin, setSwitchLogin] = useState(true)
     const [email, setEmail] = useState("")
     const [usrEmail, setUsrEmail] = useState("")
@@ -42,6 +45,8 @@ export function AuthProvider({ children }: Props) {
 
     return (
         <AuthContext.Provider value={{
+            auth,
+            setAuth,
             usrEmail,
             setUsrEmail,
             email,

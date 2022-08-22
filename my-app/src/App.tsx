@@ -14,7 +14,7 @@ const App:React.FC = () => {
   return (
     <ShoppingCartProvider>
       <Navbar />
-        <Container >
+        <Container className="mb-4">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/store' element={<Store />} />

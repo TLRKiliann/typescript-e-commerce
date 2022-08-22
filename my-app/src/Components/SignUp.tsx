@@ -71,7 +71,7 @@ class SignUp extends Component {
             placeholder="password" onChange={(e) => this.passwordChange(e)} />
 
         <button type="submit" className="btn--submit">
-          Click
+          Sign Up
         </button>
 
       </form>
