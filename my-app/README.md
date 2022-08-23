@@ -1,46 +1,60 @@
-# Getting Started with Create React App
+# TypeScript React e-commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Application with e-commerce cart & login to connect to mongoose database with a salted password with bcrypt.
 
-## Available Scripts
+## Install
 
-In the project directory, you can run:
+In my-app folder:
 
-### `npm start`
+> mkdir backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> cd backend
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> touch server.js
 
-### `npm test`
+> npm init -y
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> npm install --save-dev nodemon
 
-### `npm run build`
+**Changes in package.json**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+  "scripts": {
+  },
+```
+Now, you can use:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> npm run dev
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+to start server.
 
-### `npm run eject`
+Every changes is updated by nodemon !
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**In app folder:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> npm install express mongoose cors dotenv bcrypt
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> npm install react-bootstrap bootstrap
 
-## Learn More
+> npm install react-router-dom
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> npm install axios
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## Run
+
+**In app folder:**
+
+> npm start
+
+**In backend folder:**
+
+> npm run dev
+
