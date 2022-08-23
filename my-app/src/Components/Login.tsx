@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useAuthLogin } from "../context/AuthProvider";
 import axios from "../api/axios";
-import "../styles/login.scss";
 
 
 const LOGIN_URL = '/login';
@@ -22,13 +21,15 @@ const Login = () => {
     setUsrEmail,
     setAuth } = useAuthLogin();
 
+  console.log(errMsg);
+
   useEffect(() => {
     userRef.current?.focus();
   }, []);
 
-  useEffect(() => {
+  /*useEffect(() => {
     setErrMsg("");
-  }, [email, password]);
+  }, [email, password]);*/
   
   const emailLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -50,17 +51,19 @@ const Login = () => {
           withCredentials: true,
         }
       );
-      const accessToken = response?.data?.token;
-      console.log(accessToken);
-      setAuth({ email, password }); //roles, accessToken
+      //const accessToken = response?.data?.accessToken;
+      //const roles = response?.data?.roles;
+      console.log(response.data);
+      setAuth({ email, password}); //, roles, accessToken 
       setUsrEmail(email);
       setEmail('');
       setPassword('');
       toggle();
       setSuccess(true);
       } catch (error: any) {
-        if (!error?.response) {
-          setErrMsg('No Server Response');
+        if (error) {
+          console.log(error.response.status);
+          setErrMsg("No response from server");
         } else if (error.response?.status === 400) {
           setErrMsg('Missing Username or Password');
         } else if (error.response?.status === 401) {
@@ -73,58 +76,67 @@ const Login = () => {
   };
 
   return (
-    <form className="form--logsign" onSubmit={(e) => handleSubmit(e)}>
-      <h1>Login</h1>
+    <>
 
-      <input
-        ref={userRef}
-        type="email"
-        className="input--logsign"
-        value={email}
-        placeholder="e-mail"
-        autoComplete="off"
-        onChange={(e) => emailLogin(e)}
-        required
-      />
+        <form className="form--logsign" onSubmit={(e) => handleSubmit(e)}>
 
-      <input
-        type="password"
-        className="input--logsign"
-        value={password}
-        placeholder="password"
-        onChange={(e) => passwordLogin(e)}
-        required 
-      />
+          <h1 style={{textAlign: "center"}}>Login</h1>
+          <input
+            ref={userRef}
+            type="email"
+            className="input--logsign"
+            value={email}
+            placeholder="e-mail"
+            autoComplete="off"
+            onChange={(e) => emailLogin(e)}
+            required
+          />
 
-      <button type="submit" className="btn--submit">
-        Sign In
-      </button>
+          <input
+            type="password"
+            className="input--logsign"
+            value={password}
+            placeholder="password"
+            onChange={(e) => passwordLogin(e)}
+            required 
+          />
 
-      {success && !switchLogin ? (
-        <div>
-          <p ref={errRef}
-            className={errMsg ? 'errmsg' : 'offscreen'}
+          <button type="submit" className="btn--submit">
+            Sign In
+          </button>
+
+        </form>
+
+        {success && !switchLogin ? (
+          <div>
+
+            <h5
+              style={{
+                width: "20%",
+                margin: "auto",
+                marginTop: "10px",
+                padding: "10px",
+                textAlign: "center",
+                background: "green",
+                borderRadius: "20px",
+                color: "white"
+              }}
+            >
+              Success Login !
+            </h5>
+
+          </div>
+
+          ) : (
+
+          <h5
+            ref={errRef}
+            style={{color: errMsg ? 'red' : 'none'}}
             aria-live="assertive">
               {errMsg}
-          </p>
-          <h5 
-            style={{marginTop: "10px", padding: "5px 10px", 
-            background: "green", borderRadius: "15px", color: "white"}}
-          >
-            Success Login !
           </h5>
-        </div>
-
-        ) : (
-
-        <h5
-          style={{marginTop: "10px", padding: "5px 10px", 
-          background: "lightpink", borderRadius: "15px", color: "red"}}
-        >
-          No logged in !
-        </h5>
-      )}
-    </form>
+        )}
+    </>
   )
 }
 

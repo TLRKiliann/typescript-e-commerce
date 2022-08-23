@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext, ReactNode, useContext, useState } from "react";
-//import axios from "axios";
+
 
 type Props = {
     children: ReactNode;
@@ -28,20 +28,17 @@ export function useAuthLogin() {
 export function AuthProvider({ children }: Props) {
 
     const [auth, setAuth] = useState<object>({});
-    const [switchLogin, setSwitchLogin] = useState(true)
-    const [email, setEmail] = useState("")
-    const [usrEmail, setUsrEmail] = useState("")
+    const [switchLogin, setSwitchLogin] = useState(true);
+    const [email, setEmail] = useState("");
+    const [usrEmail, setUsrEmail] = useState("");
 
     const toggle = () => {
-        setSwitchLogin(!switchLogin)
-        //setUsrEmail(email)
-    }
+        setSwitchLogin(!switchLogin);
+    };
 
     const eraseAll = () => {
-        setUsrEmail("")
-    }
-
-    //console.log("my setEmail", setEmail)
+        setUsrEmail("");
+    };
 
     return (
         <AuthContext.Provider value={{
