@@ -8,7 +8,7 @@ const LOGIN_URL = '/login';
 const Login = () => {
 
   const userRef = useRef<HTMLInputElement>(null);
-  const errRef = useRef<HTMLInputElement>(null);
+  //const errRef = useRef<HTMLInputElement>(null);
 
   const [password, setPassword] = useState<string>("");
   const [errMsg, setErrMsg] = useState<string>("");
@@ -21,15 +21,15 @@ const Login = () => {
     setUsrEmail,
     setAuth } = useAuthLogin();
 
-  console.log(errMsg);
+  console.log("errMsg: ", errMsg);
 
   useEffect(() => {
     userRef.current?.focus();
   }, []);
 
-  /*useEffect(() => {
+  useEffect(() => {
     setErrMsg("");
-  }, [email, password]);*/
+  }, [email, password]);
   
   const emailLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -44,25 +44,31 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    /*const loginUser = {
+      email: email,
+      password: password
+    }*/
+
     try {
       const response = await axios.post(LOGIN_URL, JSON.stringify({email, password}),
         {
           headers: { 'Content-Type': 'application/json' },
-          withCredentials: true,
+          withCredentials: true
         }
-      );
-      //const accessToken = response?.data?.accessToken;
-      //const roles = response?.data?.roles;
-      console.log(response.data);
-      setAuth({ email, password}); //, roles, accessToken 
+      )
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data?.roles;
+      console.log(response?.data);
+      setAuth({ email, password, roles, accessToken});
       setUsrEmail(email);
       setEmail('');
       setPassword('');
       toggle();
       setSuccess(true);
+      console.log("login ok")
       } catch (error: any) {
-        if (error) {
-          console.log(error.response.status);
+        if (!error?.response) {
+          console.error("Hello error");
           setErrMsg("No response from server");
         } else if (error.response?.status === 400) {
           setErrMsg('Missing Username or Password');
@@ -71,7 +77,7 @@ const Login = () => {
         } else {
           setErrMsg('Login Failed');
         }
-        errRef.current?.focus();
+        //errRef.current?.focus();
       };
   };
 
@@ -130,10 +136,18 @@ const Login = () => {
           ) : (
 
           <h5
-            ref={errRef}
-            style={{color: errMsg ? 'red' : 'none'}}
+            style={{
+              width: "20%",
+              margin: "auto",
+              marginTop: "10px",
+              padding: "10px",
+              textAlign: "center",
+              background: "lightpink",
+              borderRadius: "20px",
+              color: errMsg ? 'red' : 'white'
+            }}
             aria-live="assertive">
-              {errMsg}
+              {errMsg ? `${errMsg}` : `No login`}
           </h5>
         )}
     </>

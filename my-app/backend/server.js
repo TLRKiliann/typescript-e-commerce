@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+const PORT = 4000;
+
 const mongoose = require("mongoose");
 
 const signUrl = require("./routes/SignUpRoute");
@@ -24,4 +26,4 @@ app.use("/app", signUrl);
 app.use("/app", loginUrl);
 
 
-app.listen(4000, () => console.log("Server is running on port: 4000 !"));
+app.listen(4000, () => console.log(`Server is running on port: ${PORT} !`));

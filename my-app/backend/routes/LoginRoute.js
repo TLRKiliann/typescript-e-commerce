@@ -11,7 +11,7 @@ router.post('/login', async (req, res) => {
         email: req.body.email,
     })
 
-    if (!loginUser) {
+    if (loginUser !== loginUser) {
         return { status: 'error', error: 'Invalid login' }
     }
 
@@ -24,6 +24,7 @@ router.post('/login', async (req, res) => {
         console.log("Login ok !");
         return res.json({ status: 'ok', loginUser })
     } else {
+        console.log("Login failed !");
         return res.json({ status: 'error', loginUser: false })
     }
 });
