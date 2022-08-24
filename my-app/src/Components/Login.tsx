@@ -74,8 +74,11 @@ const Login = () => {
           setErrMsg('Missing Username or Password');
         } else if (error.response?.status === 401) {
           setErrMsg('Unauthorized');
+        } else if (error.response?.status === 403) {
+          setErrMsg('Username failed 403');
         } else {
-          setErrMsg('Login Failed');
+          setErrMsg('Login Failed...');
+          console.log(error.response)
         }
         //errRef.current?.focus();
       };
