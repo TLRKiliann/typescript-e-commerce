@@ -48,6 +48,8 @@ export const Navbar = () => {
             style={{
               marginRight: "10px",
               padding: "10px",
+              fontFamily: "Consolas",
+              textDecoration: "4px 4px 4px steelblue",
               background: "steelblue",
               borderRadius: "15px",
               color: "white"
@@ -79,6 +81,7 @@ export const Navbar = () => {
               display: "flex", 
               alignItems: "center",
               justifyContent: "center",
+              fontFamily: "Consolas",
               fontSize: "0.8rem",
               color: "black", 
               border: "1px solid grey",
@@ -102,6 +105,7 @@ export const Navbar = () => {
               display: "flex", 
               alignItems: "center",
               justifyContent: "center",
+              fontFamily: "Consolas",
               fontSize: "0.8rem",
               color: "black", 
               border: "1px solid grey",
