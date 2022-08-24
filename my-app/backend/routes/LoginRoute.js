@@ -23,9 +23,15 @@ router.post('/login', async (req, res) => {
     if (isPasswordValid) {
         console.log("Login ok !");
         return res.json({ status: 'ok', loginUser })
-    } else {
+    } else if (!loginUser.password) {
+        return res.status(403).send({ message: "User Not found." });
+    } else if (!isPasswordValid) {
         console.log("Login failed !");
-        return res.json({ status: 'error', loginUser: false })
+        //return infoJson = res.json({ status: 'error', loginUser: false })
+        return res.status(401).send({ message: "Invalid Password!" });
+    }
+    else {
+        return res.status(400).send({ message: "Invalid User or Password!" });
     }
 });
 
