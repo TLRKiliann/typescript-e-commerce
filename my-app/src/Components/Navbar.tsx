@@ -46,12 +46,13 @@ export const Navbar = () => {
         {usrEmail ? (
           <span 
             style={{
-              marginRight: "10px",
+              margin: "0px 20px",
               padding: "10px",
               fontFamily: "Consolas",
-              textDecoration: "4px 4px 4px steelblue",
+              textShadow: "1px 1px 1px purple",
               background: "steelblue",
-              borderRadius: "15px",
+              borderRadius: "10px",
+              boxShadow: "0px 3px 5px grey",
               color: "white"
             }}
           >
@@ -62,10 +63,10 @@ export const Navbar = () => {
           
           <span
             style={{
-              marginRight: "10px",
+              margin: "0px 20px",
               padding: "10px",
               background: "red",
-              borderRadius: "15px",
+              borderRadius: "10px",
               color: "white"
             }}> &#8614; </span>
           )}
@@ -109,7 +110,7 @@ export const Navbar = () => {
               fontSize: "0.8rem",
               color: "black", 
               border: "1px solid grey",
-              borderRadius: "50%"
+              borderRadius: "50%",
             }}
 
           >
