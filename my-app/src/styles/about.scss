@@ -5,6 +5,8 @@ body {
 }
 
 .koala--bg {
+  position: fixed;
+  backgroundImage: 'cover';
   opacity: 0.2;
   border-radius: 20px;
   animation-name: koala;
