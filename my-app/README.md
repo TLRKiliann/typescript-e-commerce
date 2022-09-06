@@ -2,9 +2,9 @@
 
 Application with e-commerce cart & login to connect to mongoose database with a salted password with bcrypt.
 
-## Install
+# Install
 
-In my-app folder:
+## Backend
 
 > mkdir backend
 
@@ -36,7 +36,7 @@ Every changes is updated by nodemon !
 
 ---
 
-**In app folder:**
+## Frontend
 
 > npm install express mongoose cors dotenv bcrypt
 
