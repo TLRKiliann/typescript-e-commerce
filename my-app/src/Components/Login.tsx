@@ -8,7 +8,7 @@ const LOGIN_URL = '/login';
 const Login = () => {
 
   const userRef = useRef<HTMLInputElement>(null);
-  //const errRef = useRef<HTMLInputElement>(null);
+  const errRef = useRef<HTMLInputElement>(null);
 
   const [password, setPassword] = useState<string>("");
   const [errMsg, setErrMsg] = useState<string>("");
@@ -44,11 +44,6 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    /*const loginUser = {
-      email: email,
-      password: password
-    }*/
-
     try {
       const response = await axios.post(LOGIN_URL, JSON.stringify({email, password}),
         {
@@ -70,23 +65,20 @@ const Login = () => {
         if (!error?.response) {
           console.error("Hello error");
           setErrMsg("No response from server");
-        } else if (error.response?.status === 400) {
-          setErrMsg('Missing Username or Password');
         } else if (error.response?.status === 401) {
           setErrMsg('Unauthorized');
-        } else if (error.response?.status === 403) {
-          setErrMsg('Username failed 403');
+        } else if (error.response?.status === 404) {
+          setErrMsg('Forbidden');
         } else {
           setErrMsg('Login Failed...');
           console.log(error.response)
         }
-        //errRef.current?.focus();
+        errRef.current?.focus();
       };
   };
 
   return (
     <>
-
         <form className="form--logsign" onSubmit={(e) => handleSubmit(e)}>
 
           <h1 style={{textAlign: "center"}}>Login</h1>
@@ -139,6 +131,7 @@ const Login = () => {
           ) : (
 
           <h5
+            ref={errRef}
             style={{
               width: "20%",
               margin: "auto",
@@ -146,7 +139,6 @@ const Login = () => {
               padding: "10px",
               textAlign: "center",
               background: "lightpink",
-              borderRadius: "20px",
               color: errMsg ? 'red' : 'white'
             }}
             aria-live="assertive">
