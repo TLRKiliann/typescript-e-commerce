@@ -19,12 +19,13 @@ router.post("/signup", async (req, res) => {
     })
     signUpUser.save()
     .then(data => {
+        console.log(JSON.stringify(res.data))
         res.json(data)
     })
     .catch(error => {
+        console.log("Error sign-up...")
         res.json(error)
     })
-    console.log("Signup routes ok !");
 });
 
 module.exports = router;
