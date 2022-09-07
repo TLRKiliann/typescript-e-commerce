@@ -1,17 +1,22 @@
-body {
-  padding: 0px;
-  margin: 0x;
-  box-sizing: border-box;
+@use 'custom';
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Great+Vibes&display=swap');
+
+
+.div--about {
+  height: 80vh;
+  overflow: hidden;
 }
 
 .koala--bg {
   position: fixed;
-  backgroundImage: 'cover';
+  top: 77px;
+  width: 100%;
+  height: 100%;
   opacity: 0.2;
-  border-radius: 20px;
+
   animation-name: koala;
   animation-delay: 0s;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-iteration-count: 1;
 }
 
@@ -24,20 +29,35 @@ body {
   }
 }
 
-.divanim--about {
+.flexible--about {
   margin-top: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+}
+
+.title--about {
+  margin: auto;
+  font-size: 3rem;
+}
+
+.divanim--about {
+  margin-top: 5px;
 }
 
 .anim--about {
-  width: 30%;
-  padding: 10px;
+  padding: 10px 20px;
   margin: auto;
   margin-top: 20px;
   text-align: center;
+  font-size: 1.2rem;
 
-  background: white;
+  background: dodgerblue;
   border-radius: 15px;
+  border: 3px solid steelblue;
   box-shadow: 2px 2px 2px grey;
+  color: white;
 }
 
 .anim--about:nth-child(1n) {
@@ -59,6 +79,15 @@ body {
 }
 
 .anim--about:nth-child(3n) {
+  animation-name: slide-left;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  transform: translateX(0px);
+  transition-timing-function: ease-in-out;
+}
+
+.anim--about:nth-child(4n) {
   animation-name: slide-bottom;
   animation-delay: 0s;
   animation-duration: 2s;
@@ -69,7 +98,7 @@ body {
 
 @keyframes slide-top {
   0% {
-    transform: translateY(-800px);
+    transform: translateY(800px);
     transition-timing-function: ease-out;
     opacity: 0;
   }
@@ -93,9 +122,22 @@ body {
   }
 }
 
+@keyframes slide-left {
+  0% {
+    transform: translateX(-1200px);
+    transition-timing-function: ease-out;
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    transition-timing-function: ease-in;
+    opacity: 1;
+  }
+}
+
 @keyframes slide-bottom {
   0% {
-    transform: translateY(1200px);
+    transform: translateY(-800px);
     transition-timing-function: ease-out;
     opacity: 0;
   }

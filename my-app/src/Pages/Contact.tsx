@@ -1,11 +1,12 @@
 import koalaImg from "../assets/images/koala-3d.jpg";
-import '../styles/contact.scss';
+import { Container } from "react-bootstrap";
+import '../stylespage/contact.scss';
 
 
 export const Contact = () => {
   return (
-    <div>
-      <h6 style={{fontSize: "3rem"}}>Contact Us</h6>
+    <Container className="mb-4">
+      <h6 className="mt-3" style={{fontSize: "3rem"}}>Contact Us</h6>
       <div className="main--contact">
         <div>    
           <aside className="aside--contact">
@@ -48,6 +49,6 @@ export const Contact = () => {
           <p>entreprise@mail.ch</p>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }

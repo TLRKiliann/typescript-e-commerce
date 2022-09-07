@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Login from "../Components/Login";
 import SignUp from "../Components/SignUp";
+import { Container } from "react-bootstrap";
 //import { useAuthLogin } from "../context/AuthProvider"
-import "../styles/subscribe.scss";
+import "../stylespage/subscribe.scss";
 
 
 export const Subscribe = () => {
@@ -27,38 +28,42 @@ export const Subscribe = () => {
   //const turnLogin = useAuthLogin();
   //console.log("TurnLogin state", turnLogin)
 
-  return (      
-    <div className="main--div">
+  return (
+    <Container className="mb-4">
 
-      <div>
-        <h6 style={{fontSize: "3rem"}}>Subscribe</h6>
-      </div>
+      <div className="main--div mt-3">
 
-      <div className="btn--bloc">
-      
-        <button type="button" onClick={handleLogin} className="btn--logsign" id="btn--login">
-          Login
-        </button>
+        <div>
+          <h6 style={{fontSize: "3rem"}}>Subscribe</h6>
+        </div>
+
+        <div className="btn--bloc">
         
-        <button type="button" onClick={handleSignUp} className="btn--logsign">
-          SignUp
-        </button>
-
-      </div>
-
-      <div className="log--sign">
-
-        {!log && !sign &&
-          <div style={{ textAlign: "center", marginTop: "5%" }}>
-            <h1>Wellcome !</h1>
-            <h3>Choose Login or SignUp.</h3>
-          </div>}
-
-        {log && <Login />}
-        {sign && <SignUp />}
+          <button type="button" onClick={handleLogin} className="btn--logsign" id="btn--login">
+            Login
+          </button>
           
+          <button type="button" onClick={handleSignUp} className="btn--logsign">
+            SignUp
+          </button>
+
+        </div>
+
+        <div className="log--sign">
+
+          {!log && !sign &&
+            <div style={{ textAlign: "center", marginTop: "10%" }}>
+              <h1>Wellcome !</h1>
+              <h3>Choose Login or SignUp.</h3>
+            </div>}
+
+          {log && <Login />}
+          {sign && <SignUp />}
+            
+        </div>
       </div>
-    </div>
+
+    </Container>
   );
 };
 

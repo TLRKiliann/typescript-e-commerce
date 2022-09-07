@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../styles/subscribe.scss";
+import '../stylescomp/signup.scss';
 
 
 class SignUp extends Component {

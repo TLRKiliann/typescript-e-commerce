@@ -1,25 +1,31 @@
-import { Container } from 'react-bootstrap';
 import koalaContact from "../assets/images/koala-3d.jpg";
-import '../styles/about.scss';
-
+import '../stylespage/about.scss';
 
 export const About = () => {
   return (
-    <div className="text-hide">
-      <Container className="sm-4">
-        <img 
-          src={koalaContact}
-          className="koala--bg"
-          alt="koala-3d(about)" />
-        
-        <h6 style={{fontSize: "3rem"}}>About Us</h6>
+    <div className="div--about">
+    
+      <img
+        src={koalaContact}
+        className="koala--bg"
+        alt="koala-3d(about)"
+      />
+      
+      <div className="flexible--about">
+
+        <div className="divtitle--about">
+          <p className="title--about">About Us</p>
+        </div>
 
         <div className="divanim--about">
-          <p className="anim--about">We improved our work with you</p>
-          <p className="anim--about">Severals services</p>
-          <p className="anim--about">Since 1997</p>
+          <p className="anim--about">Premium high-tech internet solutions</p>
+          <p className="anim--about">High Speed Internet</p>
+          <p className="anim--about">Custom Business Solutions </p>
+          <p className="anim--about">Since 1993</p>
         </div>
-      </Container>
+
+      </div>
+
     </div>
   );
 }

@@ -1,13 +1,14 @@
+import { Container } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { myArticles } from '../assets/db_tree/data.js';
-import '../styles/home.scss';
+import '../stylespage/home.scss';
 
 
 export const Home = () => {
   //console.log(myArticles.map(myArticle => myArticle));
   return (
-    <div>
-      <h6 style={{fontSize: "3rem"}}>Last articles !</h6>
+    <Container className="mb-4">
+      <h6 className="mt-3" style={{fontSize: "3rem"}}>Last articles !</h6>
       {myArticles.map(myArticle => (
         <section key={myArticle.id}>
           <div className="art--format">
@@ -64,6 +65,6 @@ export const Home = () => {
         </div>
       </section>
 
-    </div>
+    </Container>
   );
 }

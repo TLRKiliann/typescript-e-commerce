@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
+//import { Container } from 'react-bootstrap';
 import { Navbar } from './Components/Navbar';
 import { Home } from './Pages/Home';
 import { Store } from './Pages/Store';
@@ -14,7 +14,6 @@ const App:React.FC = () => {
   return (
     <ShoppingCartProvider>
       <Navbar />
-        <Container className="mb-4">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/store' element={<Store />} />
@@ -22,7 +21,6 @@ const App:React.FC = () => {
             <Route path='/contact' element={<Contact />} />
             <Route path='/subscribe' element={<Subscribe />} />
           </Routes>
-        </Container>
     </ShoppingCartProvider>
   );
 }

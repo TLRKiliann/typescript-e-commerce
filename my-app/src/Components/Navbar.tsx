@@ -4,7 +4,7 @@ import { Container, Button, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { useAuthLogin } from "../context/AuthProvider";
 import imageLogo from "../assets/images/koala-3d.jpg";
-import './stylenav.scss';
+import '../stylescomp/stylenav.scss';
 
 
 export const Navbar = () => {
@@ -17,7 +17,7 @@ export const Navbar = () => {
     eraseAll()
   }
   return (
-    <NavbarBs className="bg-white shadow-sm mb-3">
+    <NavbarBs className="bg-white shadow-sm">
       <Container>
         <Nav className="me-auto h4">
           <div className="m-auto">
