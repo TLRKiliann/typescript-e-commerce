@@ -68,11 +68,16 @@ const Login = () => {
           setErrMsg("No response from server");
         } else if (error.response?.status === 401) {
           setErrMsg('Unauthorized');
-        } else if (error.response?.status === 404) {
+        } else if (error.response?.status === 403) {
           setErrMsg('Forbidden');
+        } else if (error.response?.status === 404) {
+          setErrMsg('Error 404');
         } else {
           setErrMsg('Login Failed...');
-          console.log(error.response)
+          console.log(error.response);
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
         }
         errRef.current?.focus();
       };
@@ -116,11 +121,11 @@ const Login = () => {
               style={{
                 width: "20%",
                 margin: "auto",
-                marginTop: "10px",
+                marginTop: "20px",
                 padding: "10px",
                 textAlign: "center",
                 background: "green",
-                borderRadius: "20px",
+                borderRadius: "15px",
                 color: "white"
               }}
             >
@@ -136,9 +141,10 @@ const Login = () => {
             style={{
               width: "20%",
               margin: "auto",
-              marginTop: "10px",
+              marginTop: "20px",
               padding: "10px",
               textAlign: "center",
+              borderRadius: "15px",
               background: "lightpink",
               color: errMsg ? 'red' : 'white'
             }}

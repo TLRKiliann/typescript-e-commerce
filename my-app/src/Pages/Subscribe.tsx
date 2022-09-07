@@ -34,7 +34,7 @@ export const Subscribe = () => {
       <div className="main--div mt-3">
 
         <div>
-          <h6 style={{fontSize: "3rem"}}>Subscribe</h6>
+          <h6 style={{fontSize: "2.4rem"}}>Subscribe</h6>
         </div>
 
         <div className="btn--bloc">

@@ -8,7 +8,7 @@ export const Home = () => {
   //console.log(myArticles.map(myArticle => myArticle));
   return (
     <Container className="mb-4">
-      <h6 className="mt-3" style={{fontSize: "3rem"}}>Last articles !</h6>
+      <h6 className="mt-3" style={{fontSize: "2.4rem"}}>Last articles !</h6>
       {myArticles.map(myArticle => (
         <section key={myArticle.id}>
           <div className="art--format">

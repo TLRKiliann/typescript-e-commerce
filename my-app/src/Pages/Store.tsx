@@ -8,7 +8,7 @@ export const Store = () => {
 
   return (
     <Container className="mb-4">
-      <h6 className="mt-3" style={{fontSize: "3rem"}}>Store</h6>
+      <h6 className="mt-3" style={{fontSize: "2.4rem"}}>Store</h6>
 
       <Row md={2} xs={1} lg={3} className="g-3">
         {storeItems.map(item => (

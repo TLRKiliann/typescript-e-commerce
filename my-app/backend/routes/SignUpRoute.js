@@ -23,7 +23,7 @@ router.post("/signup", async (req, res) => {
         res.json(data)
     })
     .catch(error => {
-        console.log("Error sign-up...")
+        console.log("Error sign-up !")
         res.json(error)
     })
 });

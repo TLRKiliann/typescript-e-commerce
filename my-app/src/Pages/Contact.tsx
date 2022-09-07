@@ -6,7 +6,7 @@ import '../stylespage/contact.scss';
 export const Contact = () => {
   return (
     <Container className="mb-4">
-      <h6 className="mt-3" style={{fontSize: "3rem"}}>Contact Us</h6>
+      <h6 className="mt-3" style={{fontSize: "2.4rem"}}>Contact Us</h6>
       <div className="main--contact">
         <div>    
           <aside className="aside--contact">
