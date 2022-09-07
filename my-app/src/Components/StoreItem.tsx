@@ -45,14 +45,14 @@ export const StoreItem = ({id, name, price, imgUrl}: StoreItemProps) => {
             >
               <div
                 className="d-flex align-items-center justify-content-center"
-                style={{ gap: ".5rem" }}
+                style={{ gap: "2rem" }}
               >
                 <Button className="btn btn-primary btn-sm"
                   style={{width: "50px"}} onClick={() => decreaseCartQuantity(id)}>
                   -
                 </Button>
                 <div>
-                  <span className="fs-3" style={{fontSize: "1.4rem"}}>{quantity}</span> In cart
+                  <span className="fs-3">{quantity}</span> In cart
                 </div>
               <Button style={{width: "50px"}} 
                 className="btn btn-primary btn-sm" onClick={() => increaseCartQuantity(id)}>

@@ -16,7 +16,7 @@
 
   animation-name: koala;
   animation-delay: 0s;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-iteration-count: 1;
 }
 
@@ -37,9 +37,21 @@
   font-family: 'Dancing Script', cursive;
 }
 
+.clouds--bg {
+  position: fixed;
+  top: 130px;
+  z-index: -1;
+}
+
 .title--about {
   margin: auto;
   font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow:
+  4px 3px 1px #4d77b1, 
+  5px 4px 3px white,
+  7px 6px 5px navy;
 }
 
 .divanim--about {
@@ -51,19 +63,19 @@
   margin: auto;
   margin-top: 20px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 
-  background: dodgerblue;
+  background: #4d77b1;
   border-radius: 15px;
-  border: 3px solid steelblue;
-  box-shadow: 2px 2px 2px grey;
+  border: 1px solid lightgrey;
   color: white;
+  text-shadow: 2px 2px 2px navy;
 }
 
 .anim--about:nth-child(1n) {
   animation-name: slide-top;
   animation-delay: 0s;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-iteration-count: 1;
   transform: translateY(0px);
   transition-timing-function: ease-in-out;
@@ -72,7 +84,7 @@
 .anim--about:nth-child(2n) {
   animation-name: slide-right;
   animation-delay: 0s;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-iteration-count: 1;
   transform: translateX(0px);
   transition-timing-function: ease-in-out;
@@ -81,7 +93,7 @@
 .anim--about:nth-child(3n) {
   animation-name: slide-left;
   animation-delay: 0s;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-iteration-count: 1;
   transform: translateX(0px);
   transition-timing-function: ease-in-out;
@@ -90,7 +102,7 @@
 .anim--about:nth-child(4n) {
   animation-name: slide-bottom;
   animation-delay: 0s;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-iteration-count: 1;
   transform: translateY(0px);
   transition-timing-function: ease-in-out;

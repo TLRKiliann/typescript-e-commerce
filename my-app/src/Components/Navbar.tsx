@@ -83,7 +83,9 @@ export const Navbar = () => {
               alignItems: "center",
               justifyContent: "center",
               fontFamily: "Consolas",
-              fontSize: "0.8rem",
+              fontSize: "0.9rem",
+              textShadow: "1px 1px 1px white",
+              background: "whitesmoke",
               color: "black", 
               border: "1px solid grey",
               borderRadius: "50%"

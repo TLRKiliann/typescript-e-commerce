@@ -1,4 +1,5 @@
 import koalaContact from "../assets/images/koala-3d.jpg";
+import cloudsEffect from "../assets/images/blue_cloud.jpg";
 import '../stylespage/about.scss';
 
 export const About = () => {
@@ -13,8 +14,10 @@ export const About = () => {
       
       <div className="flexible--about">
 
+        <img src={cloudsEffect} className="clouds--bg" alt="no clouds(about)" />
+
         <div className="divtitle--about">
-          <p className="title--about">About Us</p>
+          <h1 className="title--about">About Us</h1>
         </div>
 
         <div className="divanim--about">
