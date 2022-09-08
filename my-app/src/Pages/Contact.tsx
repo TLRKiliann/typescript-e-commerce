@@ -31,7 +31,7 @@ export const Contact = () => {
           </aside>
         </div>
         
-        <div>
+        <div className="div--koala">
           <img className="koala" width="500" height="300" src={koalaImg} alt="koala-3d" />
         </div>
       </div>

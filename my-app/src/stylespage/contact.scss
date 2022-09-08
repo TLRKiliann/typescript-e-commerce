@@ -1,20 +1,32 @@
 /*Contact styles*/
 
 .main--contact {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: left;
+}
+
+.div--koala {
+  width: 80%;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .koala {
-  margin-top: 16%;
+  margin-top: 20px;
+  margin-right: 200px;
   border-radius: 20px;
   box-shadow: 4px 4px 4px white;
 }
 
 @media screen and (min-width: 1400px) {
   .koala {
-    margin-left: 20%;
+    margin-left: 10%;
   }
 }
 
