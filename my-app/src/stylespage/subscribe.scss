@@ -14,9 +14,13 @@ body {
     background: var(--bs-light);
 }
 
+.log--sign {
+    margin-top: 2%;   
+}
+
 .form--logsign {
     margin: auto;
-    margin-top: 5%;
+    margin-top: 7%;
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -57,17 +61,20 @@ body {
 }
 
 .btn--logsign {
-    width: 100px;
-    height: 100px;
-    margin-top: 20px;
+    width: 140px;
+    height: 60px;
+    margin-top: 60px;
     font-size: 1.2rem;
-    border-radius: 20%;
+    border-radius: 5px;
+    background: black;
+    color: white;
 }
 
 .btn--logsign:hover {
     background: var(--bs-grey);
     color: var(--bs-white);
-    border-radius: 50% 50%;
+    border-radius: 10px;
+    transform: scale(1.2);
 }
 
 .btn--logsign:active {

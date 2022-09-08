@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useAuthLogin } from "../context/AuthProvider";
 import axios from "../api/axios";
 import '../stylescomp/login.scss';
-import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+import Confetti from 'react-confetti';
 
 
 const LOGIN_URL = '/login';
@@ -84,7 +84,7 @@ const Login = () => {
 
   return (
     <>
-        <form className="form--logsign" onSubmit={(e) => handleSubmit(e)}>
+        <form className="form--login" onSubmit={(e) => handleSubmit(e)}>
 
           <h1 style={{textAlign: "center"}}>Login</h1>
           <input
@@ -115,7 +115,7 @@ const Login = () => {
 
         {success && !switchLogin ? (
           <div>
-            `${confetti}`
+            <Confetti />
             <h5
               style={{
                 width: "20%",
@@ -123,8 +123,8 @@ const Login = () => {
                 marginTop: "20px",
                 padding: "10px",
                 textAlign: "center",
-                background: "green",
                 borderRadius: "15px",
+                background: "green",
                 color: "white"
               }}
             >

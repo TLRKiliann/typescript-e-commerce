@@ -14,9 +14,9 @@ body {
     background: var(--bs-light);
 }
 
-.form--logsign {
+.form--login {
     margin: auto;
-    margin-top: 5%;
+    margin-top: 6%;
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@ body {
 .btn--submit {
     width: 25%;
     margin-top: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .btn--submit:hover {
@@ -99,8 +99,6 @@ body {
 }
 
 .passwd--ticket {
-    /*position: absolute;*/
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -120,6 +118,9 @@ body {
 .passwd--ticket h4 {
     margin: auto;
     margin: 10px 10px;
+    font-family: 'Consolas';
+    color: white;
+    text-shadow: 1px 1px 2px white;
 }
 
 @keyframes ticket {

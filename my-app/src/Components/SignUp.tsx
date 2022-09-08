@@ -54,7 +54,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <form className="form--logsign" onSubmit={(e) => this.handleSubmit(e)}>
+      <form className="form--signup" onSubmit={(e) => this.handleSubmit(e)}>
 
         <h1>Sign Up</h1>
 
