@@ -22,6 +22,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-y: hidden;
 }
 
 .input--logsign {
@@ -85,4 +86,53 @@ body {
 
 .rounded--style:hover {
     background: orange;
+}
+
+
+.overflow--div {
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    width: 300px;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.passwd--ticket {
+    /*position: absolute;*/
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    background: red;
+    border-radius: 15px 0px 0px 15px;
+    color: white;
+
+    animation-name: ticket;
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    transform: translateX(calc(0vw + 300px));
+    transition-timing-function: ease;
+}
+
+.passwd--ticket h4 {
+    margin: auto;
+    margin: 10px 10px;
+}
+
+@keyframes ticket {
+    0% {
+        transform: translateX(calc(0vw + 300px));
+    }
+    30% {
+        transform: translateX(calc(0vw + 0px));
+    }
+    70% {
+        transform: translateX(calc(0vw + 0px));
+    }
+    100% {
+        transform: translateX(calc(0vw + 300px));
+    }
 }

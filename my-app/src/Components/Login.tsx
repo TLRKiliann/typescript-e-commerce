@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useAuthLogin } from "../context/AuthProvider";
 import axios from "../api/axios";
 import '../stylescomp/login.scss';
+import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
 
 const LOGIN_URL = '/login';
@@ -67,17 +68,15 @@ const Login = () => {
           console.error("Hello error");
           setErrMsg("No response from server");
         } else if (error.response?.status === 401) {
-          setErrMsg('Unauthorized');
-        } else if (error.response?.status === 403) {
-          setErrMsg('Forbidden');
-        } else if (error.response?.status === 404) {
-          setErrMsg('Error 404');
-        } else {
-          setErrMsg('Login Failed...');
+          setErrMsg('Wrong password');
           console.log(error.response);
           console.log(error.response.data);
           console.log(error.response.status);
           console.log(error.response.headers);
+        } else if (error.response?.status === 404) {
+          setErrMsg('Error 404');
+        } else {
+          setErrMsg('Login Failed...');
         }
         errRef.current?.focus();
       };
@@ -116,7 +115,7 @@ const Login = () => {
 
         {success && !switchLogin ? (
           <div>
-
+            `${confetti}`
             <h5
               style={{
                 width: "20%",
@@ -135,35 +134,33 @@ const Login = () => {
           </div>
 
           ) : (
-
-          <h5
-            ref={errRef}
-            style={{
-              width: "20%",
-              margin: "auto",
-              marginTop: "20px",
-              padding: "10px",
-              textAlign: "center",
-              borderRadius: "15px",
-              background: "lightpink",
-              color: errMsg ? 'red' : 'white'
-            }}
-            aria-live="assertive">
-              {errMsg ? `${errMsg}` : `No login`}
-          </h5>
+          <>
+            <div className="overflow--div">
+              {errMsg && (
+                <div className="passwd--ticket">
+                  <h4>Wrong Password !</h4>
+                </div>
+                )}
+            </div>
+            <h5
+              ref={errRef}
+              style={{
+                width: "20%",
+                margin: "auto",
+                marginTop: "20px",
+                padding: "10px",
+                textAlign: "center",
+                borderRadius: "15px",
+                background: "lightpink",
+                color: errMsg ? 'red' : 'white'
+              }}
+              aria-live="assertive">
+                {errMsg ? `${errMsg}` : `No login`}
+            </h5>
+            </>
         )}
     </>
   )
 }
 
 export default Login;
-
-/*
-      const accessData = response?.data;
-      console.log("Data: ", response.data);
-      //const accessToken = response?.data?.token;
-      //console.log("token", accessToken);
-      //const roles = response?.data?.roles;
-      //console.log("roles", roles);
-      setAuth({ email, password }); //roles, accessToken
-*/

@@ -19,12 +19,12 @@ router.post("/signup", async (req, res) => {
     })
     signUpUser.save()
     .then(data => {
-        console.log(JSON.stringify(res.data))
-        res.json(data)
+        console.log("User created !")
+        res.status(201).send({ message: "User created !" })
     })
     .catch(error => {
-        console.log("Error sign-up !")
-        res.json(error)
+        console.log("Error sign up...")
+        res.status(400).send({ error: error})
     })
 });
 
