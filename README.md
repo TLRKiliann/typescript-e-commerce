@@ -1,22 +1,19 @@
 # typescript-e-commerce
 
-This site was made with react-router-dom, so an SPA convert in MPA ;)
-
-
+This site was made with react-router-dom & contains :
 
 Login, SignUp &amp; authentication
 
 ShoppingCart
 
-Frontend packages : 
+
+Frontend packages : (npm start)
 
 > TypeScript - Bootstrap - Sass - axios
 
-Backend packages :
+Backend packages : (npm run dev)
 
 > express - nodemon - dotenv - cors - mongoose - bcrypt
 
-Styles :
 
-Animations effects with Sass
-Style with Bootstrap
+For installation look at next README.md in src folder.
