@@ -50,7 +50,7 @@ const Login = () => {
       const response = await axios.post(LOGIN_URL, JSON.stringify({email, password}),
         {
           headers: { 'Content-Type': 'application/json' },
-          withCredentials: true
+          withCredentials: false
         }
       )
       const accessToken = response?.data?.accessToken;
