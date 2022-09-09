@@ -2,8 +2,7 @@
 
 This site was made with react-router-dom & contains :
 
-Login, SignUp &amp; authentication
-
+- Login, SignUp &amp; authentication
 - ShoppingCart
 
 
