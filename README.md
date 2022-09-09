@@ -4,7 +4,7 @@ This site was made with react-router-dom & contains :
 
 - DB for to link internet sites
 - Login, SignUp &amp; authentication (axios - express)
-- ShoppingCart (useContext)
+- ShoppingCart (multiple files manage by useContext & localStorage)
 
 ## Frontend packages : (npm start)
 
