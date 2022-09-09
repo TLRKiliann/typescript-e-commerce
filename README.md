@@ -18,5 +18,9 @@ This site was made with react-router-dom & contains :
 
 Demo : (youtube)
 
+Enjoy it ! :wink:
+
+ko@l@tr33 :koala:
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/iYtVlNlXSoo/0.jpg)](https://www.youtube.com/watch?v=iYtVlNlXSoo)
 
