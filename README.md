@@ -14,13 +14,9 @@ This site was made with react-router-dom & contains :
 
 > express - nodemon - dotenv - cors - mongoose - bcrypt
 
-For installation look at next README.md in src folder.
+**For installation look at next README.md in src folder.**
 
-Demo : 
-
-(Just a little presentation about this project)
-
-https://www.youtube.com/watch?v=iYtVlNlXSoo
+Demo : (youtube)
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/iYtVlNlXSoo/0.jpg)](https://www.youtube.com/watch?v=iYtVlNlXSoo)
 
