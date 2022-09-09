@@ -4,14 +4,14 @@ This site was made with react-router-dom & contains :
 
 Login, SignUp &amp; authentication
 
-ShoppingCart
+- ShoppingCart
 
 
-Frontend packages : (npm start)
+## Frontend packages : (npm start)
 
 > TypeScript - Bootstrap - Sass - axios
 
-Backend packages : (npm run dev)
+## Backend packages : (npm run dev)
 
 > express - nodemon - dotenv - cors - mongoose - bcrypt
 
