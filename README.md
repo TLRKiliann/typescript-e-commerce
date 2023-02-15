@@ -1,10 +1,10 @@
 # typescript-e-commerce
 
-This site was made with react-router-dom & contains :
+This e-commerce site was made with react-router-dom-v6 & contains :
 
-- DB for to link internet sites
+- mongoose.Schema for DataBase mongoose
 - Login, SignUp &amp; authentication (axios - express)
-- ShoppingCart (multiple files manage by useContext & localStorage)
+- ShoppingCart (multiple files manage by useContext & useLocalStorage)
 
 ## Frontend packages : (npm start)
 
@@ -13,8 +13,6 @@ This site was made with react-router-dom & contains :
 ## Backend packages : (npm run dev)
 
 > express - nodemon - dotenv - cors - mongoose - bcrypt
-
-**For installation look at next README.md in src folder.**
 
 Demo : (youtube)
 
